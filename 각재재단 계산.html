@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>각재재단 계산</title>
+</head>
+<link href="main.css" rel="stylesheet">
+<script type="text/javascript" src="각재재단 계산.js"></script>
+
+<body>
+
+    <form action="" name="mForm">
+
+        <div class="container">
+            <div class="header">
+                <h1>각재재단 계산기</h1>
+            </div class="name-background">
+            <div class="btnWrap">
+
+                <label for="center">기준치 : </label>
+                <input id="center" class="Number" style="margin-bottom: 50px;" type="number" pattern="\d*" placeholder="기준 각재">
+
+                <label for="Thickness">칼날두께 : </label>
+                <input id="Thickness" class="Number" type="number" pattern="\d*" placeholder="두께 입력">
+                <br>
+                <label for="length" style="margin-top: 50px">길이 :<input id="length" class="Number"  style="margin-bottom: 50px;" type="number" pattern="\d*" placeholder="길이 입력">
+                </label>
+                <label for="Quantity"  style="float: right">수량 : <input id="Quantity" class="Number" type="number" pattern="\d*" placeholder="수량 입력"></label>
+                <br>
+                <input class="main-button" type="button" value="추가" onclick="doAdd()">
+                <input class="main-button" type="button" style="float: right" value="삭제" onclick="doDel()">
+            </div>
+            <div class="list">
+                <pre><h3 style="font-size: 20px; margin: 0px; margin-top: -10px">길이         수량</h3></pre>
+                <select multiple name="sel" style="width: 100%; height: 70%; font-size: 20px;text-align: center;">
+                </select>
+            </div>
+
+            <div class="sub">
+                <label for="result">이만큼 : </label>
+                <input class="Number" id="result" type="number" pattern="\d*" placeholder="number">
+                <label for="rest" style="float: right" >나머지 :<input class="Number" id="rest" type="text" pattern="\d*" placeholder="나머지"></label>
+                <br>
+                <input class="main-button" style="margin-left: 90px;"type="button" value="계산" onclick="sub()">
+                <input class="main-button" type="reset" style="float: right" onclick="window.location.reload()">
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
