@@ -5,7 +5,7 @@ var sub1= 0;
         var $num1 = document.getElementById("length");
         var $num2 = document.getElementById("Quantity");
         // table element 찾기
-       if($num1 == '' || $num2 == '') { alert('길이 및 수량을 입력 해주세여~')}
+       if($num1.value == '' || $num2.value == '') { alert('길이 및 수량을 입력 해주세여~')}
        else{
         num1[0].push($num1.value);
         num1[1].push($num2.value);
