@@ -45,9 +45,10 @@ function doDel() {
             };
             sub1-=Number($Thickness);
             for (var i = 1; $center <= sub1; i++) {
-                sub1-=Number($center);
+            sub1=Number($center)-sub1;
                 
             };
+            sub1=Number($center)-sub1;
             $result.value=Number(i);
             $rest.value=Number(sub1)+'mm';
         }
