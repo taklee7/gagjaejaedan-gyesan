@@ -14,7 +14,7 @@ var sub1= 0;
         selEle.options.length = 0;
 
  for (let i = 0; i < num1[0].length; i++) {
-        selEle.options[selEle.options.length] = new Option(num1[0][i]+"mm\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"+num1[1][i], "100");
+        selEle.options[selEle.options.length] = new Option(num1[0][i]+"mm\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"+num1[1][i], "100");
     };
     $num1.value='';
     $num2.value='';
