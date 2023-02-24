@@ -16,32 +16,32 @@
 
         <div class="container">
             <div class="header">
-                <h1 style="font-size: 150%; margin: 0px">각재재단 계산기</h1>
+                <h1 style="font-size: 150%; margin: 10px">각재재단 계산기</h1>
             </div class="name-background">
             <div class="btnWrap">
 
-                <label for="center" class="font-size" >기준치 : <input id="center" class="text-size" style="margin-bottom: 5%;" type="number" pattern="\d*" placeholder="기준 각재"></label>
-
-                <label for="Thickness" class="font-size"  style="float: right; ">칼날두께 : <input id="Thickness" class="text-size" style="margin-bottom: 5%;" type="number" pattern="\d*" placeholder="두께 입력"></label>
+                <label for="center" class="font-size" >기준치 : <input id="center" class="text-size" type="number" pattern="\d*" placeholder="기준 각재"></label>
                 <br>
-                <label for="length" class="font-size">길이 : <input id="length" class="text-size"  style="margin-bottom: 5%;" type="number" pattern="\d*" placeholder="길이 입력"></label>
-                <label for="Quantity" class="font-size"  style="float: right">수량 : <input id="Quantity" class="text-size" style="margin-bottom: 5%;" type="number" pattern="\d*" placeholder="수량 입력"></label>
+                <label for="length" class="font-size">길이 : <input id="length" class="text-size"  type="number" pattern="\d*" placeholder="길이 입력"></label>
                 <br>
-                <input class="main-button" type="button" value="추가" onclick="doAdd()">
-                <input class="main-button" type="button" style="float: right" value="삭제" onclick="doDel()">
+                <label for="Quantity" class="font-size">수량 : <input id="Quantity" class="text-size" type="number" pattern="\d*" placeholder="수량 입력"></label>
+                <br>
+                <input class="main-button" type="button" value="추가" onclick="addRow()">
+                <input class="main-button" type="button" style="float: right" value="삭제" onclick="deleteRow(-1)">
             </div>
             <div class="list-box">
-                <pre><h3 class="font-size">길이         수량</h3></pre>
-                <select multiple name="sel" class="list1">
-                </select>
+                <table class="list" id='fruits' border="1">
+                <tr>
+                    <th style="background-color: rgb(216, 215, 215);">길이</th><th style="background-color: rgb(216, 215, 215);">수량</th>
+                </tr>
+                
+              </table>
             </div>
 
             <div class="sub">
-                <label for="result" class="font-size">이만큼 : </label>
-                <input class="text-size" id="result" type="number" pattern="\d*" placeholder="number">
-                <label for="rest" class="font-size" style="float: right" >나머지 :<input class="text-size" id="rest" type="text" pattern="\d*" placeholder="나머지"></label>
+                <label for="result" class="font-size">이만큼 : <input class="text-size" id="result" type="number" pattern="\d*" placeholder="number"></label>
                 <br>
-                <input class="main-button" style="margin-left: 15%;"type="button" value="계산" onclick="sub()">
+                <input class="main-button" type="button" value="계산" onclick="sub()">
                 <input class="main-button" type="reset" style="float: right" onclick="window.location.reload()">
             </div>
         </div>

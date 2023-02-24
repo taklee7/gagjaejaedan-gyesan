@@ -1,7 +1,7 @@
 var num1 = [[],[]];
 var sub1= 0;
 
-    function doAdd() {
+function addRow() {
         var $num1 = document.getElementById("length");
         var $num2 = document.getElementById("Quantity");
         // table element 찾기
@@ -9,48 +9,54 @@ var sub1= 0;
        else{
         num1[0].push($num1.value);
         num1[1].push($num2.value);
-        //var selEle = document.querySelector("select");
-        let selEle = document.mForm.sel;
-        selEle.options.length = 0;
-
- for (let i = 0; i < num1[0].length; i++) {
-        selEle.options[selEle.options.length] = new Option(num1[0][i]+"mm\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"+num1[1][i], "100");
-    };
+    let le = num1[0].at(-1);
+    let qu = num1[1].at(-1);
+    // table element 찾기
+    const table = document.getElementById('fruits');
+    
+    // 새 행(Row) 추가 (테이블 중간에)
+    const newRow = table.insertRow();
+    
+    // 새 행(Row)에 Cell 추가
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    
+    // Cell에 텍스트 추가
+    newCell1.innerText = le;
+    newCell2.innerText = qu;
     $num1.value='';
     $num2.value='';
+  }
 }
-}
- 
-function doDel() {
-    var sel = document.mForm.sel;
-    // 마지막 option 삭제
-    sel.options[sel.options.length-1] = null;
-    // 전부 삭제
-   // sel.options.length = 1;
+function deleteRow(rownum) {
+    if(num1[0].length>0){
+    // table element 찾기
+    const table = document.getElementById('fruits');
+    
+    // 행(Row) 삭제
+    const newRow = table.deleteRow(rownum);
+    
    num1[0].pop();
    num1[1].pop();
 }
+}
    function sub(){
        let selEle = document.mForm.sel;
-       const $Thickness = document.getElementById('Thickness').value;
        const $center = document.getElementById('center').value;
-       if($Thickness == '' || $center == '') { alert('기준치 및 칼날두께를 입력 해주세여~')}
+       if( $center == '') { alert('기준치를 입력 해주세여~')}
       else if(selEle.options.length == 0) { alert('각재재단 할 목록을 추가 해주세여~')}
        else{
            sub1= 0;
            let $result = document.getElementById('result');
-           let $rest = document.getElementById('rest');
            for (let i = 0; i < num1[0].length; i++) {
-               sub1+=Number(num1[0][i])*Number(num1[1][i])+Number($Thickness*num1[1][i]);
+               sub1+=Number(num1[0][i])*Number(num1[1][i]);
             };
-            sub1-=Number($Thickness);
             for (var i = 1; $center <= sub1; i++) {
-            sub1=Number($center)-sub1;
+            sub1-=Number($center);
                 
             };
-            sub1=Number($center)-sub1;
+            if($center>sub1){sub1=Number($center)-sub1;};
             $result.value=Number(i);
-            $rest.value=Number(sub1)+'mm';
         }
 }
 
