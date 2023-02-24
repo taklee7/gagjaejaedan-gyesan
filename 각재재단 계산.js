@@ -41,10 +41,9 @@ function deleteRow(rownum) {
 }
 }
    function sub(){
-       let selEle = document.mForm.sel;
        const $center = document.getElementById('center').value;
        if( $center == '') { alert('기준치를 입력 해주세여~')}
-      else if(selEle.options.length == 0) { alert('각재재단 할 목록을 추가 해주세여~')}
+      else if(num1[0].length == 0) { alert('각재재단 할 목록을 추가 해주세여~')}
        else{
            sub1= 0;
            let $result = document.getElementById('result');
