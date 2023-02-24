@@ -110,11 +110,13 @@ th {
     margin-bottom: 10px;
     border: 1px solid #333;
     border-radius: 4px;
+    width: 80%;
 }
 
 .text-size {
     font-size: 22px;
     flex: 1;
+    width: 55%;
 }
 
 .main-button {
